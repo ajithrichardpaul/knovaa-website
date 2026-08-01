@@ -1,21 +1,26 @@
-const Contact = () => {
+const Portfolio = () => {
   return (
-    <section id="contact" className="bg-[#0B1023] py-24">
+    <section
+      id="portfolio"
+      className="bg-[#050816] py-24"
+    >
       <div className="max-w-7xl mx-auto px-6 text-center">
+
         <p className="text-pink-500 uppercase tracking-[5px]">
-          Contact Us
+          Portfolio
         </p>
 
         <h2 className="text-5xl font-bold text-white mt-4">
-          Let's Build Something Amazing
+          Recent Projects
         </h2>
 
         <p className="text-gray-400 mt-6">
-          Email: knovaadigitalsolutions@gmail.com
+          Our latest work will be showcased here.
         </p>
+
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default Portfolio;

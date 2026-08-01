@@ -1,58 +1,79 @@
 const services = [
   {
+    icon: "🌐",
     title: "Website Development",
-    desc: "Modern, responsive websites that convert visitors into customers.",
+    desc: "Modern, responsive websites designed to grow your business.",
   },
   {
+    icon: "📈",
     title: "Digital Marketing",
-    desc: "Google Ads, Meta Ads and lead generation campaigns.",
+    desc: "SEO, Google Ads, Meta Ads and lead generation strategies.",
   },
   {
-    title: "SEO Optimization",
-    desc: "Improve your Google rankings and organic traffic.",
+    icon: "🎨",
+    title: "Branding",
+    desc: "Professional logos, brand identity and creative designs.",
   },
   {
-    title: "Social Media Management",
-    desc: "Grow your brand with engaging social media content.",
+    icon: "🤖",
+    title: "AI Solutions",
+    desc: "AI-powered automation and smart business workflows.",
   },
   {
-    title: "Brand Identity",
-    desc: "Logo, branding and business design solutions.",
+    icon: "📱",
+    title: "Social Media",
+    desc: "Content creation and social media management.",
   },
   {
-    title: "AI Business Solutions",
-    desc: "AI-powered automation and productivity solutions.",
+    icon: "💼",
+    title: "Business Consulting",
+    desc: "Helping businesses grow with digital strategies.",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="bg-[#050816] py-24">
+    <section
+  id="services"
+  className="bg-[#050816] py-24"
+>
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-pink-500 uppercase tracking-[4px] text-center mb-3">
+
+        <p className="text-pink-500 uppercase tracking-[5px] text-center">
           Our Services
         </p>
 
-        <h2 className="text-5xl font-bold text-white text-center mb-14">
-          What We Do
+        <h2 className="text-5xl font-bold text-white text-center mt-4">
+          Helping Businesses Grow Digitally
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+
           {services.map((service) => (
+
             <div
               key={service.title}
-              className="bg-[#0B1023] rounded-2xl p-8 border border-white/10 hover:border-pink-500 transition"
+              className="rounded-3xl bg-[#0B1023] border border-white/10 p-8 hover:border-pink-500 hover:-translate-y-2 transition-all duration-300"
             >
-              <h3 className="text-white text-xl font-semibold mb-4">
+
+              <div className="text-5xl">
+                {service.icon}
+              </div>
+
+              <h3 className="text-white text-2xl font-semibold mt-6">
                 {service.title}
               </h3>
 
-              <p className="text-gray-400">
+              <p className="text-gray-400 mt-4 leading-7">
                 {service.desc}
               </p>
+
             </div>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );

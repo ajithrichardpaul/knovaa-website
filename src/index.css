@@ -10,3 +10,24 @@ body {
   color: white;
   font-family: Inter, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+#about {
+  scroll-margin-top: 90px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+html {
+  scroll-behavior: smooth;
+}

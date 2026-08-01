@@ -1,6 +1,9 @@
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-[#050816] flex items-center justify-center pt-24">
+    <section
+  id="home"
+  className="min-h-screen bg-[#050816] flex items-center justify-center pt-24"
+>
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         <p className="text-pink-500 uppercase tracking-[6px] mb-6">
