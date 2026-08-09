@@ -1,9 +1,9 @@
 const Hero = () => {
   return (
     <section
-  id="home"
-  className="min-h-screen bg-[#050816] flex items-center justify-center pt-24"
->
+      id="home"
+      className="min-h-screen bg-[#050816] flex items-center justify-center pt-24"
+    >
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         <p className="text-pink-500 uppercase tracking-[6px] mb-6">
@@ -22,13 +22,22 @@ const Hero = () => {
         </p>
 
         <div className="mt-10 flex justify-center gap-5">
+
           <button className="bg-pink-600 hover:bg-pink-500 px-8 py-4 rounded-full text-white transition">
             Get Free Consultation
           </button>
 
-          <button className="border border-gray-600 hover:border-pink-500 px-8 py-4 rounded-full text-white transition">
+          <button
+            onClick={() =>
+              document.getElementById("portfolio")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+            className="border border-gray-600 hover:border-pink-500 px-8 py-4 rounded-full text-white transition"
+          >
             View Portfolio
           </button>
+
         </div>
 
       </div>
