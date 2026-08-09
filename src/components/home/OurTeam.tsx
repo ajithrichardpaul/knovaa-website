@@ -13,7 +13,7 @@ const team = [
     image: "",
   },
   {
-    name: "Varsha",
+    name: "Varsha P",
     role: "Web Developer & BDE",
     image: "",
   },
