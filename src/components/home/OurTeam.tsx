@@ -4,7 +4,7 @@ const team = [
   {
     name: "Karishma A M",
     role: "Founder & Digital Strategist",
-    image: "/team/karishma.jpg",
+    image: "",
   },
   {
     name: "Ajith R P",
@@ -44,68 +44,54 @@ const OurTeam = () => {
 
         </div>
 
+        {/* Team Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
 
-{/* Team Cards */}
-<div className="grid lg:grid-cols-3 gap-6 mt-16">
+          {team.map((member) => (
 
-  {team.map((member) => (
+            <div
+              key={member.name}
+              className="group bg-[#0B1023] border border-white/10 rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40"
+            >
 
-    <div
-      key={member.name}
-      className="group bg-[#0B1023] border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40"
-    >
+              {/* Profile Image */}
+              <div className="flex justify-center">
 
-      {/* Card Layout */}
-      <div className="flex flex-col sm:flex-row lg:flex-col">
+                <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-pink-500/20 bg-[#050816] flex items-center justify-center">
 
-        {/* Image */}
-        <div className="w-full sm:w-1/2 lg:w-full h-72 sm:h-72 lg:h-80 bg-[#050816]">
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <UserRound
+                      size={65}
+                      strokeWidth={1.2}
+                      className="text-gray-500"
+                    />
+                  )}
 
-          {member.image ? (
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <UserRound
-                size={70}
-                strokeWidth={1.2}
-                className="text-gray-500"
-              />
+                </div>
+
+              </div>
+
+              {/* Name */}
+              <h3 className="text-2xl font-semibold text-white mt-6">
+                {member.name}
+              </h3>
+
+              {/* Role */}
+              <p className="text-pink-400 mt-2">
+                {member.role}
+              </p>
+
             </div>
-          )}
+
+          ))}
 
         </div>
-
-
-        {/* Details */}
-        <div className="w-full sm:w-1/2 lg:w-full p-6 sm:p-8 lg:p-8 flex flex-col justify-center">
-
-          <p className="text-pink-500 uppercase tracking-[2px] text-xs font-medium">
-            KNOVAA Team
-          </p>
-
-          <h3 className="text-2xl font-bold text-white mt-4 whitespace-nowrap">
-            {member.name}
-          </h3>
-
-          <p className="text-pink-400 text-base mt-2 leading-6">
-            {member.role}
-          </p>
-
-          <div className="w-10 h-[2px] bg-pink-500 mt-5" />
-
-        </div>
-
-      </div>
-
-    </div>
-
-  ))}
-
-</div>
 
       </div>
     </section>
