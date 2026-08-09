@@ -3,11 +3,12 @@ import { UserRound } from "lucide-react";
 const team = [
   {
     name: "Karishma A M",
-    role: "Founder & Digital Strategist",
+    founder: true,
+    role: "Data Analyst & Digital Strategist",
     image: "",
   },
   {
-    name: "Ajith R P",
+    name: "Richard Paul R",
     role: "Business Consultant & Web Developer",
     image: "",
   },
@@ -77,15 +78,19 @@ const OurTeam = () => {
 
               </div>
 
-              {/* Name */}
-              <h3 className="text-2xl font-semibold text-white mt-6">
-                {member.name}
-              </h3>
+<h3 className="text-2xl font-bold text-white mt-4">
+  {member.name}
+</h3>
 
-              {/* Role */}
-              <p className="text-pink-400 mt-2">
-                {member.role}
-              </p>
+{member.founder && (
+  <p className="text-white text-sm font-medium mt-2">
+    Founder
+  </p>
+)}
+
+<p className="text-pink-400 text-base mt-2 leading-6">
+  {member.role}
+</p>
 
             </div>
 
