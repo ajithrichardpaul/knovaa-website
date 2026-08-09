@@ -22,10 +22,14 @@ const Hero = () => {
         </p>
 
         <div className="mt-10 flex justify-center gap-5">
-
-          <button className="bg-pink-600 hover:bg-pink-500 px-8 py-4 rounded-full text-white transition">
-            Get Free Consultation
-          </button>
+          <a
+              href="https://wa.me/919342130383?text=Hi%20KNOVAA%2C%20I%27d%20like%20to%20get%20a%20free%20consultation."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-pink-600 hover:bg-pink-500 px-8 py-4 rounded-full text-white transition"
+          >
+              Get Free Consultation
+          </a> 
 
           <button
             onClick={() =>
