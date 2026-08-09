@@ -216,7 +216,7 @@ const Footer = () => {
                 />
 
                 <span className="text-gray-400">
-                  +91 XXXXX XXXXX
+                  +91 93421 30383 - Whatsapp
                 </span>
 
               </div>
