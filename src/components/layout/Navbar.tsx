@@ -50,49 +50,52 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#050816]/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
 
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
         {/* Logo */}
-
         <div
           className="flex items-center gap-3 cursor-pointer"
           onClick={() => scrollToSection("home")}
         >
           <img
             src="/logo.png"
-            alt="KNOVAA"
-            className="h-10"
+            alt="KNOVAA Digital Solutions"
+            className="h-11 w-auto object-contain"
           />
 
           <div>
-            <h1 className="text-xl font-bold text-white">
+            <h1 className="text-xl font-bold text-[#0D1B3D]">
               KNOVAA
             </h1>
 
-            <p className="text-xs text-pink-400">
+            <p className="text-xs font-medium bg-gradient-to-r from-[#5B21B6] to-[#EC4899] bg-clip-text text-transparent">
               Digital Solutions
             </p>
           </div>
         </div>
 
         {/* Desktop Menu */}
-
-        <nav className="hidden lg:flex gap-10">
+        <nav className="hidden lg:flex items-center gap-9">
 
           {menuItems.map((item) => (
 
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`transition ${
+              className={`relative font-medium transition-all duration-300 ${
                 active === item.id
-                  ? "text-pink-500"
-                  : "text-white hover:text-pink-400"
+                  ? "text-[#5B21B6]"
+                  : "text-[#0D1B3D] hover:text-[#EC4899]"
               }`}
             >
               {item.label}
+
+              {/* Active underline */}
+              {active === item.id && (
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-[#5B21B6] to-[#EC4899]" />
+              )}
             </button>
 
           ))}
@@ -100,19 +103,18 @@ const Navbar = () => {
         </nav>
 
         {/* Desktop Button */}
-
         <button
           onClick={() => scrollToSection("contact")}
-          className="hidden lg:block bg-pink-600 hover:bg-pink-500 px-6 py-3 rounded-full text-white transition"
+          className="hidden lg:block px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#5B21B6] to-[#EC4899] hover:shadow-lg hover:shadow-pink-500/25 hover:scale-105 transition-all duration-300"
         >
           Get Quote
         </button>
 
-        {/* Mobile Icon */}
-
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white"
+          className="lg:hidden text-[#0D1B3D] hover:text-[#5B21B6] transition"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -120,22 +122,21 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-
       {menuOpen && (
 
-        <div className="lg:hidden bg-[#050816] border-t border-white/10">
+        <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg">
 
-          <div className="flex flex-col p-6 gap-6">
+          <div className="flex flex-col p-6 gap-5">
 
             {menuItems.map((item) => (
 
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-left transition ${
+                className={`text-left font-medium transition ${
                   active === item.id
-                    ? "text-pink-500"
-                    : "text-white"
+                    ? "text-[#5B21B6]"
+                    : "text-[#0D1B3D] hover:text-[#EC4899]"
                 }`}
               >
                 {item.label}
@@ -145,7 +146,7 @@ const Navbar = () => {
 
             <button
               onClick={() => scrollToSection("contact")}
-              className="bg-pink-600 rounded-full py-3 text-white"
+              className="bg-gradient-to-r from-[#5B21B6] to-[#EC4899] rounded-full py-3 text-white font-semibold hover:shadow-lg transition"
             >
               Get Quote
             </button>

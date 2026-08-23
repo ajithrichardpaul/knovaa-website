@@ -44,28 +44,34 @@ const WhyChoose = () => {
   return (
     <section
       id="why-us"
-      className="bg-[#0B1023] py-24 scroll-mt-24"
+      className="relative bg-[#F5F1FF] py-24 scroll-mt-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Background Decoration */}
+      <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-[#E9D5FF]/40 blur-3xl pointer-events-none" />
+
+      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#DBEAFE]/50 blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Heading */}
         <div className="max-w-3xl mx-auto text-center">
 
-          <p className="text-pink-500 uppercase tracking-[5px] text-sm font-medium">
+          <p className="text-[#5B21B6] uppercase tracking-[5px] text-sm font-semibold">
             Why KNOVAA
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0D1B3D] mt-4">
             Why Businesses Choose KNOVAA
           </h2>
 
-          <p className="text-gray-400 text-lg mt-6 leading-8">
+          <p className="text-[#64748B] text-lg mt-6 leading-8">
             We combine creativity, technology and business thinking to
             create digital solutions that are practical, professional
             and built for growth.
           </p>
 
         </div>
+
 
         {/* Reasons */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
@@ -76,27 +82,33 @@ const WhyChoose = () => {
             return (
               <div
                 key={reason.title}
-                className="group bg-[#050816] border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40 hover:shadow-[0_20px_60px_rgba(236,72,153,0.10)]"
+                className="group relative bg-white border border-[#DDE5F2] rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#C4B5FD] hover:shadow-[0_20px_60px_rgba(91,33,182,0.12)]"
               >
 
+                {/* Top Gradient Line */}
+                <div className="absolute top-0 left-8 right-8 h-1 rounded-full bg-gradient-to-r from-[#5B21B6] to-[#EC4899] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center transition-all duration-300 group-hover:bg-pink-500 group-hover:border-pink-500">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F0E8FF] to-[#FCE7F3] border border-[#E9D5FF] flex items-center justify-center transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#5B21B6] group-hover:to-[#EC4899] group-hover:border-transparent">
 
                   <Icon
                     size={27}
                     strokeWidth={1.8}
-                    className="text-pink-400 transition-colors duration-300 group-hover:text-white"
+                    className="text-[#5B21B6] transition-colors duration-300 group-hover:text-white"
                   />
 
                 </div>
 
+
                 {/* Title */}
-                <h3 className="text-white text-xl font-semibold mt-6">
+                <h3 className="text-[#0D1B3D] text-xl font-semibold mt-6">
                   {reason.title}
                 </h3>
 
+
                 {/* Description */}
-                <p className="text-gray-400 mt-3 leading-7">
+                <p className="text-[#64748B] mt-3 leading-7">
                   {reason.desc}
                 </p>
 

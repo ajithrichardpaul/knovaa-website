@@ -1,33 +1,54 @@
 @import "tailwindcss";
 
+/* ========================================
+   KNOVAA GLOBAL THEME
+   ======================================== */
+
+:root {
+  --knovaa-navy: #0d1b3d;
+  --knovaa-purple: #5b21b6;
+  --knovaa-pink: #ec4899;
+  --knovaa-pink-light: #f472b6;
+  --knovaa-lavender: #e9d5ff;
+  --knovaa-blue-light: #f2f6ff;
+  --knovaa-white: #ffffff;
+  --knovaa-text: #0d1b3d;
+  --knovaa-text-light: #64748b;
+  --knovaa-border: #e2e8f0;
+}
+
+/* ========================================
+   HTML
+   ======================================== */
+
 html {
   scroll-behavior: smooth;
 }
+
+/* ========================================
+   BODY
+   ======================================== */
 
 body {
   margin: 0;
-  background: #050816;
-  color: white;
+  background: var(--knovaa-white);
+  color: var(--knovaa-text);
   font-family: Inter, sans-serif;
 }
-html {
-  scroll-behavior: smooth;
-}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
 
 section {
   scroll-margin-top: 90px;
 }
 
-#about {
-  scroll-margin-top: 90px;
-}
-html {
-  scroll-behavior: smooth;
-}
+/* ========================================
+   SELECTION
+   ======================================== */
 
-section {
-  scroll-margin-top: 90px;
-}
-html {
-  scroll-behavior: smooth;
+::selection {
+  background: var(--knovaa-purple);
+  color: white;
 }
