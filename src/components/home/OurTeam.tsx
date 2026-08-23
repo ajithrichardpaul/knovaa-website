@@ -8,9 +8,9 @@ const team = [
     image: "",
   },
   {
-    name: "Richard Paul R",
+    name: "Ajith R",
     founder: false,
-    role: "Business Consultant & Web Developer",
+    role: "Business Consultant & Developer",
     image: "",
   },
   {

@@ -5,7 +5,8 @@ const projects = [
     description:
       "A client project showcased by KNOVAA Digital Solutions.",
     services: [
-      "Software & Technology",
+      "Digital Marketing",
+      "Sales",
     ],
   },
   {
