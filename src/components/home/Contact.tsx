@@ -1,21 +1,48 @@
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import type { FormEvent } from "react";
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  // Clear the form
+  form.reset();
+
+  // Show success message
+  setSubmitted(true);
+
+  // Hide success message after 5 seconds
+  setTimeout(() => {
+    setSubmitted(false);
+  }, 5000);
+};
+
   return (
     <section
       id="contact"
       className="relative bg-[#EEF5FF] py-24 scroll-mt-24 overflow-hidden"
     >
-
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#DBEAFE]/50 blur-3xl pointer-events-none" />
 
       <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#E9D5FF]/40 blur-3xl pointer-events-none" />
 
-
       <div className="relative max-w-7xl mx-auto px-6">
 
-        {/* Heading */}
+        {/* ==============================
+            SECTION HEADING
+        ============================== */}
+
         <div className="max-w-3xl mx-auto text-center">
 
           <p className="text-[#5B21B6] uppercase tracking-[5px] text-sm font-semibold">
@@ -34,13 +61,16 @@ const Contact = () => {
         </div>
 
 
-        {/* Contact Area */}
+        {/* ==============================
+            CONTACT AREA
+        ============================== */}
+
         <div className="grid lg:grid-cols-2 gap-12 mt-16">
 
 
-          {/* =====================================
+          {/* ==============================
               CONTACT INFORMATION
-          ===================================== */}
+          ============================== */}
 
           <div className="relative bg-white border border-[#DDE5F2] rounded-3xl p-8 md:p-10 shadow-sm">
 
@@ -58,7 +88,10 @@ const Contact = () => {
             </p>
 
 
-            {/* Contact Details */}
+            {/* ==============================
+                CONTACT DETAILS
+            ============================== */}
+
             <div className="space-y-6 mt-10">
 
 
@@ -147,9 +180,9 @@ const Contact = () => {
           </div>
 
 
-          {/* =====================================
+          {/* ==============================
               CONTACT FORM
-          ===================================== */}
+          ============================== */}
 
           <div className="relative bg-white border border-[#DDE5F2] rounded-3xl p-8 md:p-10 shadow-sm">
 
@@ -160,34 +193,56 @@ const Contact = () => {
               Send Us a Message
             </h3>
 
-            <form className="mt-8 space-y-5">
+
+            <form
+              className="mt-8 space-y-5"
+              onSubmit={handleSubmit}
+            >
 
 
-              {/* Name */}
+              {/* ==============================
+                  NAME - REQUIRED
+              ============================== */}
+
               <div>
 
                 <label className="text-[#0D1B3D] text-sm font-medium">
-                  Name
+                  Name{" "}
+                  <span className="text-[#EC4899]">
+                    *
+                  </span>
                 </label>
 
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your name"
+                  required
                   className="w-full mt-2 bg-[#F8FAFC] border border-[#DDE5F2] rounded-xl px-4 py-3 text-[#0D1B3D] placeholder-[#94A3B8] outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#E9D5FF] transition"
                 />
 
               </div>
 
 
-              {/* Email */}
+              {/* ==============================
+                  EMAIL - OPTIONAL
+              ============================== */}
+
               <div>
 
                 <label className="text-[#0D1B3D] text-sm font-medium">
-                  Email
+
+                  Email{" "}
+
+                  <span className="text-[#64748B]">
+                    (Optional)
+                  </span>
+
                 </label>
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="you@example.com"
                   className="w-full mt-2 bg-[#F8FAFC] border border-[#DDE5F2] rounded-xl px-4 py-3 text-[#0D1B3D] placeholder-[#94A3B8] outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#E9D5FF] transition"
                 />
@@ -195,23 +250,80 @@ const Contact = () => {
               </div>
 
 
-              {/* Message */}
+              {/* ==============================
+                  PHONE - REQUIRED
+              ============================== */}
+
               <div>
 
                 <label className="text-[#0D1B3D] text-sm font-medium">
-                  Message
+
+                  Phone{" "}
+
+                  <span className="text-[#EC4899]">
+                    *
+                  </span>
+
+                </label>
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+91 98765 43210"
+                  required
+                  pattern="[0-9+\-\s()]{10,15}"
+                  title="Please enter a valid phone number"
+                  className="w-full mt-2 bg-[#F8FAFC] border border-[#DDE5F2] rounded-xl px-4 py-3 text-[#0D1B3D] placeholder-[#94A3B8] outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#E9D5FF] transition"
+                />
+
+              </div>
+
+
+              {/* ==============================
+                  MESSAGE - REQUIRED
+              ============================== */}
+
+              <div>
+
+                <label className="text-[#0D1B3D] text-sm font-medium">
+
+                  Message{" "}
+
+                  <span className="text-[#EC4899]">
+                    *
+                  </span>
+
                 </label>
 
                 <textarea
+                  name="message"
                   rows={5}
                   placeholder="Tell us about your project..."
+                  required
                   className="w-full mt-2 bg-[#F8FAFC] border border-[#DDE5F2] rounded-xl px-4 py-3 text-[#0D1B3D] placeholder-[#94A3B8] outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#E9D5FF] transition resize-none"
                 />
 
               </div>
 
 
-              {/* Submit */}
+              {/* ==============================
+                  SUCCESS MESSAGE
+              ============================== */}
+
+              {submitted && (
+                <div className="rounded-xl bg-green-50 border border-green-200 px-4 py-3 text-green-700 text-sm">
+
+                  Thank you! Your message has been submitted
+                  successfully.
+
+                </div>
+              )}
+
+
+              {/* ==============================
+                  SEND BUTTON
+              ============================== */}
+
               <button
                 type="submit"
                 className="w-full bg-gradient-to-r from-[#5B21B6] to-[#EC4899] hover:shadow-lg hover:shadow-purple-200 text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5"
