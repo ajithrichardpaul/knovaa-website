@@ -8,7 +8,7 @@ const team = [
     image: "",
   },
   {
-    name: "Varsha P",
+    name: "Richy AJP",
     founder: false,
     role: "Web Developer & BDE",
     image: "",
